@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/head.ejs') %>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<%- include('layouts/header.ejs') %>
+<%- include('layouts/internal-banner.ejs') %> 
+<div class="container course">
+    <div class="row pt-4">
+        <% course.forEach(item => { %>
+        <div class="col">
+           <h2><%= item.title %></h2>
+            <img src='<%= item.image %>' alt="<%= item.title %>">
+            <p><%= item.course_program %></p>
+            <p><%= item.description %></p>
+            <a href="/course" class="btn btn-info">back</a>
+        </div>
+        <%})%>
+    </div>
+</div>
+<%- include('layouts/footer.ejs') %>
+</body>
+</html>
