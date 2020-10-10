@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../layouts/head.ejs') %>
+<%- include('../layouts/head.ejs') %>
 
-  <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-    <%- include('../layouts/header.ejs') %> <%-
-    include('../layouts/internal-banner.ejs') %>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+    <%- include('../layouts/header.ejs') %>
+    <%- include('../layouts/internal-banner.ejs') %>
     <div class="container course pb-4">
-      <a href="course/insert" class="btn btn-warning mt-4">Add</a>
-      <div class="row mt-4">
-        <% course.forEach(item => { %>
-        <div class="col-md-4 mt-4">
-          <h2><%= item.title %></h2>
-          <img src="<%= item.image %>" alt="<%= item.title %>" />
-          <p><%= item.preview %></p>
-          <a href="/course/<%= item.id %>" class="btn btn-info">read more</a>
-          <a href="/admin/course/delete/<%= item.id %>" class="btn btn-primary"
-            >Delete</a
-          >
-          <a href="/admin/course/update/<%= item.id %>" class="btn btn-danger"
-            >Update</a
-          >
+        <a href="course/insert" class="btn btn-warning mt-4">Add</a>
+        <div class="row mt-4">
+            <% course.forEach(item => { %>
+            <div class="col-md-4 mt-4">
+                <h2><%= item.title %></h2>
+                <img src='<%= item.image %>' alt="<%= item.title %>">
+                <p><%= item.preview %></p>
+                <a href="/course/<%= item.id %>" class="btn btn-info">read more</a>
+                <a href="/admin/course/delete/<%= item.id %>" class="btn btn-primary">Delete</a>
+                <a href="/admin/course/update/<%= item.id %>" class="btn btn-danger">Update</a>
+            </div>
+            <%})%>
         </div>
-        <%})%>
-      </div>
     </div>
     <%- include('../layouts/footer.ejs') %>
-  </body>
+</body>
+
 </html>

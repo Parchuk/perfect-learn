@@ -1,52 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../layouts/head.ejs') %>
-  <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-    <%- include('../layouts/header.ejs') %> <%-
-    include('../layouts/internal-banner.ejs') %>
-    <div class="container course">
-      <div class="row">
-        <form
-          action="/admin/course/insert"
-          method="post"
-          class="row form-group"
-          enctype="multipart/form-data"
-        >
-          <input
-            type="text"
-            class="col-12 d-block mt-2 mb-2"
-            name="title"
-            placeholder="title"
-          />
-          <input
-            type="text"
-            class="col-12 d-block mb-2"
-            name="preview"
-            placeholder="preview"
-          />
-          <input
-            type="text"
-            class="col-12 d-block mb-2"
-            name="course_program"
-            placeholder="preview"
-          />
-          <input type="file" class="col-12 d-block mb-2" name="image" />
-          <input
-            type="text"
-            class="col-12 d-block mb-2"
-            name="description"
-            placeholder="description"
-          />
-          <input
-            type="text"
-            class="col-12 d-block mb-2"
-            name="price"
-            placeholder="price"
-          />
-          <input type="submit" value="Add" class="btn-primary" />
-        </form>
-      </div>
-    </div>
-    <%- include('../layouts/footer.ejs') %>
-  </body>
+<%- include('../layouts/head.ejs') %>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<%- include('../layouts/header.ejs') %>
+<%- include('../layouts/internal-banner.ejs') %> 
+<div class="container course">
+   <div class="row">
+       <form action="/admin/course/insert" method="post" class="row form-group" enctype="multipart/form-data">
+            <input type="text" class="col-12 d-block mt-2 mb-2" name="title" placeholder="title">
+            <input type="text" class="col-12 d-block mb-2" name="preview" placeholder="preview">
+            <input type="text" class="col-12 d-block mb-2" name="course_program" placeholder="preview">
+            <input type="file" class="col-12 d-block mb-2" name="image">
+            <input type="text" class="col-12 d-block mb-2" name="description" placeholder="description">
+            <input type="text" class="col-12 d-block mb-2" name="price" placeholder="price">
+            <input type="submit" value="Add" class="btn-primary">
+       </form>
+   </div>
+</div>
+<%- include('../layouts/footer.ejs') %>
+</body>
 </html>

@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const sequelize = require('./helper/database');
+
 // const expressLayouts = require('express-ejs-layouts')
 
 // const mongoose = require('mongoose')
@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extends: false }));
 app.use(session({
   secret: 'secret',
   resave: true,
-  saveUninitialized: false,
+  saveUninitialized: true,
   // cookie: {
   //   maxAge: 100000,
   //   httpOnly: false,
@@ -71,8 +71,10 @@ app.use(errorController.get404);
 // app.use(adminController.getCourse)
 
 
-sequelize.sync().then(result => {
-  // console.log('Sync resalt', result);
-});
+
+
+
+
+
 
 app.listen(PORT, () => console.log(`Server running at port ${PORT}`));
